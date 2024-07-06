@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="YellowGreg Portfolio">
+  <link rel="icon" type="image/png" href="https://img.getimg.ai/generated/img-u1vYyfAtK7GTe9OK1BzeH.jpeg" />
+  <title>YellowGreg</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+      background: black; 
+    }
+
+    .background-media {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      border-radius: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+      animation: fadeIn 1s ease-out;
+      max-width: 700px;
+      width: 90%;
+      transition: box-shadow 0.1s, transform 0.1s;
+      perspective: 500px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .main-container:hover {
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.6);
+      cursor: pointer;
+    }
+
+    .avatar-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      animation: rotateIn 1s ease-out;
+    }
+
+    @keyframes rotateIn {
+      from {
+        transform: rotate(-360deg);
+      }
+      to {
+        transform: rotate(0deg);
+      }
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin: 10px 0;
+      text-shadow: 0 0 10px rgba(227, 227, 227, 0.477);
+      animation: slideIn 1s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    p {
+      font-size: 1.2em;
+      opacity: 0.8;
+      margin: 10px 0;
+      animation: fadeIn 1s ease-out 0.5s;
+      animation-fill-mode: forwards;
+      opacity: 0;
+    }
+
+    .job-title {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease-out 0.7s;
+      animation-fill-mode: forwards;
+      opacity: 0;
+    }
+
+    .job-title .tag {
+      background: rgba(215, 215, 215, 0.145);
+      border-radius: 5px;
+      padding: 5px 10px;
+      margin: 5px;
+      font-size: 1em;
+      color: #fff;
+      display: flex;
+      align-items: center;
+    }
+
+    .job-title .tag i {
+      margin-left: 5px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .job-title .tag i:hover {
+      color: white;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      animation: fadeIn 1s ease-out 0.9s;
+      animation-fill-mode: forwards;
+      opacity: 0;
+    }
+
+    .social-links a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.5em;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: white;
+      transform: scale(1.2);
+    }
+
+    .music-player {
+      margin-top: 20px;
+      animation: fadeIn 1s ease-out 1.1s;
+      animation-fill-mode: forwards;
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .music-player .controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .music-player button {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5em;
+      margin: 0 10px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .music-player button:hover {
+      color: white;
+    }
+
+    .music-player input[type="range"] {
+      width: 200px;
+      margin: 0 10px;
+      cursor: pointer;
+    }
+
+    .music-player .track-info {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+
+    .footer {
+      color: blueviolet; /* Change this color if you can't see your credit*/
+      margin-top: 40px;
+      font-size: 0.8em;
+      opacity: 0.7;
+      animation: fadeIn 1s ease-out 1.3s;
+      animation-fill-mode: forwards;
+      opacity: 0;
+    }
+
+    .hover-toggle-button {
+      background: none;
+      border: 2px solid #fff;
+      color: #fff;
+      font-size: 1em;
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      margin-top: 20px;
+      text-transform: uppercase;
+      border-radius: 5px;
+    }
+
+    .hover-toggle-button:hover {
+      background-color: transparent;
+      color: white;
+    }
+
+    .main-container.no-hover {
+      transform: none !important;
+    }
+
+    @media screen and (max-width: 600px) {
+      .main-container {
+        width: 95%;
+      }
+
+      .music-player input[type="range"] {
+        width: 150px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="background-media-container">
+    <!-- Background media will be inserted here by the JavaScript Code -->
+  </div>
+  <div class="main-container" id="main-container">
+    <img class="avatar-image" src="https://avatar-cyan.vercel.app/api/pfp/773952016036790272/image" alt="Discord Avatar">
+    <h1>YellowGreg</h1>
+    <p>Owner & Developer of AdvanceFalling Team</p>
+    <div class="job-title">
+      <div class="tag">Web Developer </div>
+      <div class="tag">Backend Developer </div>
+      <div class="tag">NSFW Developer </div>
+      <div class="tag">Lua Scripter </div>
+    </div>
+    <div class="social-links">
+      <a href="https://www.youtube.com/@yellowgreg3535" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://github.com/AdvanceFTeam" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://discord.com/users/773952016036790272" target="_blank"><i class="fab fa-discord"></i></a>
+    </div>
+    <div class="music-player">
+      <audio id="audio" src="Hikiray - Stuck Inside My Head.mp3" loop autoplay></audio>
+      <div class="controls">
+        <button id="play-pause"><i class="fas fa-play"></i></button>
+        <input type="range" id="seek-bar" value="0">
+        <button id="mute"><i class="fas fa-volume-up"></i></button>
+        <input type="range" id="volume-bar" min="0" max="1" step="0.01" value="1">
+      </div>
+      <div class="track-info">
+        <span id="current-time">0:00</span>
+        <span id="duration">0:00</span>
+      </div>
+    </div>
+    <button class="hover-toggle-button" id="hover-toggle-button">Stop 3D Hover</button>
+  </div>
+  <div class="footer">
+    &copy; 2024 AdvanceFalling.
+  </div>
+
+  <script>
+    const mainContainer = document.getElementById('main-container');
+    const hoverToggleButton = document.getElementById('hover-toggle-button');
+    const audio = document.getElementById('audio');
+    const playPauseButton = document.getElementById('play-pause');
+    const muteButton = document.getElementById('mute');
+    const seekBar = document.getElementById('seek-bar');
+    const volumeBar = document.getElementById('volume-bar');
+    const currentTime = document.getElementById('current-time');
+    const duration = document.getElementById('duration');
+    const backgroundMediaContainer = document.getElementById('background-media-container');
+
+    const autoLoop = true; // Set to false if you don't want to auto-loop the music
+    const autoPlay = true; // Set to false if you don't want to autoplay the music
+    const startTime = 10; // Set the start time to play your music
+
+    if (autoLoop) {
+      audio.loop = true;
+    }
+
+    if (autoPlay) {
+      audio.autoplay = true;
+    }
+
+    audio.currentTime = startTime;
+
+    // Check if there's a saved Stop/Start 3D hover effect animation
+    const hoverPreference = localStorage.getItem('hoverPreference');
+    if (hoverPreference === 'no-hover') {
+      mainContainer.classList.add('no-hover');
+      hoverToggleButton.textContent = 'Start 3D Hover';
+    } else {
+      mainContainer.classList.remove('no-hover');
+      hoverToggleButton.textContent = 'Stop 3D Hover';
+    }
+
+    mainContainer.addEventListener('mousemove', handleMove);
+    mainContainer.addEventListener('mouseout', () => {
+      mainContainer.style.transform = 'perspective(500px) scale(1) rotateX(0) rotateY(0)';
+    });
+
+    hoverToggleButton.addEventListener('click', () => {
+      if (mainContainer.classList.contains('no-hover')) {
+        mainContainer.classList.remove('no-hover');
+        hoverToggleButton.textContent = 'Stop 3D Hover';
+        mainContainer.addEventListener('mousemove', handleMove);
+        localStorage.setItem('hoverPreference', 'hover');
+      } else {
+        mainContainer.classList.add('no-hover');
+        hoverToggleButton.textContent = 'Start 3D Hover';
+        mainContainer.removeEventListener('mousemove', handleMove);
+        mainContainer.style.transform = 'perspective(500px) scale(1) rotateX(0) rotateY(0)';
+        localStorage.setItem('hoverPreference', 'no-hover');
+      }
+    });
+
+    function handleMove(e) {
+      const height = mainContainer.clientHeight;
+      const width = mainContainer.clientWidth;
+      const xVal = e.layerX;
+      const yVal = e.layerY;
+      const yRotation = 20 * ((xVal - width / 2) / width);
+      const xRotation = -20 * ((yVal - height / 2) / height);
+      const string = 'perspective(500px) scale(1.1) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)';
+      mainContainer.style.transform = string;
+    }
+
+    playPauseButton.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        playPauseButton.innerHTML = '<i class="fas fa-pause"></i>';
+      } else {
+        audio.pause();
+        playPauseButton.innerHTML = '<i class="fas fa-play"></i>';
+      }
+    });
+
+    audio.addEventListener('play', () => {
+      playPauseButton.innerHTML = '<i class="fas fa-pause"></i>';
+    });
+
+    audio.addEventListener('pause', () => {
+      playPauseButton.innerHTML = '<i class="fas fa-play"></i>';
+    });
+
+    muteButton.addEventListener('click', () => {
+      audio.muted = !audio.muted;
+      muteButton.innerHTML = audio.muted ? '<i class="fas fa-volume-mute"></i>' : '<i class="fas fa-volume-up"></i>';
+    });
+
+    seekBar.addEventListener('input', () => {
+      audio.currentTime = seekBar.value;
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      seekBar.value = audio.currentTime;
+      currentTime.textContent = formatTime(audio.currentTime);
+    });
+
+    audio.addEventListener('loadedmetadata', () => {
+      seekBar.max = audio.duration;
+      duration.textContent = formatTime(audio.duration);
+    });
+
+    volumeBar.addEventListener('input', () => {
+      audio.volume = volumeBar.value;
+    });
+
+    function formatTime(seconds) {
+      const minutes = Math.floor(seconds / 60);
+      seconds = Math.floor(seconds % 60);
+      return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    }
+
+    function loadBackgroundMedia(url) {
+      const extension = url.split('.').pop().toLowerCase();
+      let mediaElement;
+
+      // you can add more if you want
+      if (['mp4', 'webm', 'ogg'].includes(extension)) {
+        mediaElement = document.createElement('video');
+        mediaElement.src = url;
+        mediaElement.autoplay = true;
+        mediaElement.loop = true;
+        mediaElement.muted = true;
+        mediaElement.className = 'background-media';
+      } else if (['jpg', 'jpeg', 'png', 'gif'].includes(extension)) {
+        mediaElement = document.createElement('img');
+        mediaElement.src = url;
+        mediaElement.className = 'background-media';
+      } else {
+        console.error('Unsupported media type');
+        return;
+      }
+
+      backgroundMediaContainer.appendChild(mediaElement);
+    }
+
+    // Supports video/gif/image
+    const backgroundMediaUrl = 'yae-miko-morning-wake-up-genshin-impact-moewalls-com.mp4';
+    loadBackgroundMedia(backgroundMediaUrl);
+  </script>
+</body>
+
+</html>
